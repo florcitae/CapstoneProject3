@@ -1,0 +1,34 @@
+<%- include ("partials/header.ejs")%>
+
+
+<div class="receta-container">
+    <div class="receta-info">
+        <div class="title"><%= receta.titulo %></div>
+        <div class="categories"><%= receta.categorias %></div>
+        <div class="description"><%= receta.descripcion %></div>
+    </div>
+    <div class="image"><img src="/<%= receta.image %>" alt="<%= receta.titulo %>"></div>
+</div>
+
+<div class="ing-paso-container">
+        <div class="steps">
+            <h2 style="color: #FF914D;">Paso a paso</h2>
+            <ol>
+                <% receta.paso.forEach(function(paso, index) { %>
+                    <li><%= paso %></li>
+                <% }); %>
+            </ol>
+        </div>
+
+        <div class="ingredients">
+            <h2>Ingredientes</h2>
+            <ul>
+                <% receta.ingrediente.forEach(function(ingrediente, index) { %>
+                    <li><%= ingrediente %></li>
+                <% }); %>
+            </ul>
+        </div>
+</div>
+
+
+<%- include ("partials/footer.ejs")%>

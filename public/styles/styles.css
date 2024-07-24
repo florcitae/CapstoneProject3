@@ -1,0 +1,380 @@
+body{
+    background-color: white;
+    font-family: 'inter', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #1E1E1E;
+}
+header {
+    background-color: #FFCFAB;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.05%; /* Ajusta según sea necesario */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 6%; /* Ajusta el tamaño según necesites */
+    height: auto; /* Ajusta la altura automáticamente */
+    margin-left: 20px; /* Ajusta el margen según sea necesario */
+}
+
+.boton {
+    background-color: #FF914D;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.boton:hover {
+    background-color: white;
+    color: #FF914D;
+}
+
+/*Cards */      
+.card-container {
+    display: flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    align-items:flex-start;
+
+    gap: 4%;
+}
+
+.card {
+    flex: 1;
+    min-width: 18rem;
+    max-width: 18rem;
+    margin-bottom: 4%;
+}
+
+footer {
+    background-color: #FFCFAB; /* Fondo del header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra en el borde */
+    padding: 10px; /* Espaciado interno del header, ajusta según sea necesario */
+    bottom: 0;
+
+    /* Alinear el contenido del header */
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  /* Recipe Details */
+
+.recipe-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF914D;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra en el borde */
+}
+
+.recipe-details img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.recipe-details .info {
+    width: 70%;
+}
+
+.recipe-details .info h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.recipe-details .info p {
+    margin: 10px 0;
+}
+
+/* Step-by-Step Instructions */
+.instructions {
+    margin: 20px 0;
+}
+
+.instructions h2 {
+    margin: 0 0 10px 0;
+}
+
+.instructions .step {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.instructions .step img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.instructions .step p {
+    margin: 0;
+    flex-grow: 1;
+}
+
+h1 {
+    color: #FF914D;
+    font-family: 'inter', sans-serif;
+    font-weight: bolder;
+}
+
+/* Ingredients */
+.ingredients {
+    margin: 20px 0;
+    background-color: #ffcfab;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.ingredients h2 {
+    margin: 0 0 10px 0;
+}
+
+.ingredients ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredients ul li {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+/*Pasos formulario*/
+.feedback-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#add-paso {
+    background-color: #FF914D;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#add-paso:hover {
+    background-color: white;
+    color: #FF914D;
+    border: 1px solid #FF914D;
+}
+
+.paso {
+    margin-bottom: 10px;
+}
+
+/*Ingredientes formulario*/
+
+#add-ingrediente {
+    background-color: #FF914D;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#add-ingrediente:hover {
+    background-color: white;
+    color: #FF914D;
+    border: 1px solid #FF914D;
+}
+
+.ingrediente {
+    margin-bottom: 10px;
+}
+
+.botonSubmit {
+    background-color: #FF914D;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.botonSubmit:hover {
+    color: #FF914D;
+    background-color: white;
+}
+
+.form {
+    margin: 20px;
+}
+
+.receta-container {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    gap: 20px;
+    margin: 0px;
+    color: white;
+    background-color: #FF914D;
+    border-radius: 5px;
+    margin-bottom: 3%;
+}
+
+.receta-info {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 36px;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.categories {
+    font-size: 16px;
+    text-align: left;
+}
+
+.description {
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.ing-paso-container {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    gap: 20px;
+    margin: 0px;
+    color: #1E1E1E;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.ingredients {
+    background-color: #FFDAB9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.steps h2,
+.ingredients h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.steps ul,
+.ingredients ul {
+    list-style: none;
+    padding: 0;
+}
+
+.steps li,
+.ingredients li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.steps ol li {
+    list-style-type: none;
+    counter-increment: lista; /* Un nombre identificativo que te guste */
+    position: relative;
+    }
+    
+.steps ol li::before {
+    color: #FF914D;
+    content: counter(lista) "-"; /* Indica el separador para tu contenido */
+    left: -32px;
+    position: absolute;
+    text-align: right;
+    font-weight: bolder;
+    width: 26px;
+    }
+
+    #editar-receta-form {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .boton-editar {
+        background-color: #827ef6; /* Color del botón */
+        color: white; /* Color del texto */
+        padding: 10px 20px; /* Ajusta el padding según sea necesario */
+        border: none; /* Elimina el borde del botón */
+        border-radius: 5px; /* Borde redondeado */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inferior */
+    }
+    .boton-eliminar {
+        background-color: #ff4d4d; /* Color del botón */
+        color: white; /* Color del texto */
+        padding: 10px 20px; /* Ajusta el padding según sea necesario */
+        border: none; /* Elimina el borde del botón */
+        margin-right: 6px;
+        border-radius: 5px; /* Borde redondeado */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inferior */
+    } 
+
+/*
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 2fr 3fr;
+    gap: 10px; 
+    height: 400px; 
+}
+
+.title {
+    grid-area: 1 / 1 / 2 / 2; 
+    font-weight: bolder;
+    font-size: 36px;
+    font-family: 'inter', sans-serif;
+}
+
+.categories {
+    grid-area: 2 / 1 / 3 / 2; 
+    font-size: 16px;
+    font-family: 'inter', sans-serif;
+}
+
+.description {
+    grid-area: 3 / 1 / 4 / 2;
+    font-size: 18px;
+    font-family: 'inter', sans-serif;
+}
+
+.image {
+    grid-area: 1 / 2 / 4 / 3; 
+} */
+

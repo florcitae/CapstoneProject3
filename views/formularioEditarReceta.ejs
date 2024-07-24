@@ -1,0 +1,73 @@
+<%- include('partials/header.ejs') %>
+
+<body>
+    <h1>Editar Receta</h1>
+    <form id="editar-receta-form" action="/editar-receta" method="POST" class="form">
+        <input name="image" type="file" class="form-control-file" id="exampleFormControlFile1">
+        <input name="titulo" type="text" class="feedback-input" placeholder="Título Receta" value="<%= receta.titulo %>" required />
+        <input name="descripcion" type="text" class="feedback-input" placeholder="Descripción Receta" value="<%= receta.descripcion %>" required />
+        <input name="categorias" type="text" class="feedback-input" placeholder="Categorías Receta" value="<%= receta.categorias %>" required />
+        <input type="text" name="id" value="<%= receta.id %>" hidden="true"/>
+
+        <h2>Pasos</h2>
+        <div id="pasos-container">
+            <% receta.paso.forEach((paso, index) => { %>
+                <div class="paso">
+                    <input name="paso[]" type="text" class="feedback-input" placeholder="Paso <%= index + 1 %>" value="<%= paso %>" required />
+                </div>
+            <% }) %>
+        </div>
+        <button type="button" class="boton" id="add-paso">Agregar Paso</button>
+        
+        <h2>Ingredientes</h2>
+        <div id="ingredientes-container">
+            <% receta.ingrediente.forEach((ingrediente, index) => { %>
+                <div class="ingrediente">
+                    <input name="ingrediente[]" type="text" class="feedback-input" placeholder="Ingrediente <%= index + 1 %>" value="<%= ingrediente %>" required />
+                </div>
+            <% }) %>
+        </div>
+        <button type="button" class="boton" id="add-ingrediente">Agregar Ingrediente</button>
+        
+        <br/>
+        <input type="submit" class="boton" value="Guardar cambios" style="margin-top:5px"/>
+    </form>
+</body>
+
+<script>
+    document.getElementById('add-paso').addEventListener('click', function() {
+        const pasosContainer = document.getElementById('pasos-container');
+        const pasoCount = pasosContainer.children.length + 1;
+        const newPasoDiv = document.createElement('div');
+        newPasoDiv.classList.add('paso');
+    
+        const newPasoInput = document.createElement('input');
+        newPasoInput.name = 'paso[]';
+        newPasoInput.type = 'text';
+        newPasoInput.classList.add('feedback-input');
+        newPasoInput.placeholder = `Paso ${pasoCount}`;
+        newPasoInput.required = true;
+    
+        newPasoDiv.appendChild(newPasoInput);
+        pasosContainer.appendChild(newPasoDiv);
+    });
+
+    document.getElementById('add-ingrediente').addEventListener('click', function() {
+        const ingredientesContainer = document.getElementById('ingredientes-container');
+        const ingredienteCount = ingredientesContainer.children.length + 1;
+        const newIngredienteDiv = document.createElement('div');
+        newIngredienteDiv.classList.add('ingrediente');
+    
+        const newIngredienteInput = document.createElement('input');
+        newIngredienteInput.name = 'ingrediente[]';
+        newIngredienteInput.type = 'text';
+        newIngredienteInput.classList.add('feedback-input');
+        newIngredienteInput.placeholder = `Ingrediente ${ingredienteCount}`;
+        newIngredienteInput.required = true;
+    
+        newIngredienteDiv.appendChild(newIngredienteInput);
+        ingredientesContainer.appendChild(newIngredienteDiv);
+    });
+</script>
+
+<%- include('partials/footer.ejs') %>

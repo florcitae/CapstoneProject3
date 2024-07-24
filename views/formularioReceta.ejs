@@ -1,0 +1,60 @@
+<%- include ("partials/header.ejs")%>
+<h1>Crear receta</h1>
+<form id="receta-form" class="form" action="/formularioReceta" method="POST">
+  <input name="titulo" type="text" class="feedback-input" placeholder="Titulo Receta" />
+  <input name="descripcion" type="text" class="feedback-input" placeholder="Descripcion Receta" />
+  <input name="categorias"type="text" class="feedback-input" placeholder="Categorias receta"></input>
+
+<div id="pasos-container">
+    <div class="paso">
+        <input name="paso[]" type="text" class="feedback-input" placeholder="Paso 1" required />
+    </div>
+</div>
+<button type="button" class="boton" id="add-paso">Agregar Paso</button>
+
+<div id="ingredientes-container">
+    <div class="ingrediente">
+        <input name="ingrediente[]" type="text" class="feedback-input" placeholder="Ingrediente 1" required />
+    </div>
+</div>
+<button type="button" class="boton" id="add-ingrediente">Agregar Ingrediente</button>
+
+<input name="image" type="file" class="form-control-file" id="exampleFormControlFile1"></input>
+<input type="submit" class="botonSubmit"value="SUBMIT" />
+</form>
+<script>
+    document.getElementById('add-paso').addEventListener('click', function() {
+        const pasosContainer = document.getElementById('pasos-container');
+        const pasoCount = pasosContainer.children.length + 1;
+        const newPasoDiv = document.createElement('div');
+        newPasoDiv.classList.add('paso');
+    
+        const newPasoInput = document.createElement('input');
+        newPasoInput.name = 'paso[]';
+        newPasoInput.type = 'text';
+        newPasoInput.classList.add('feedback-input');
+        newPasoInput.placeholder = `Paso ${pasoCount}`;
+        newPasoInput.required = true;
+    
+        newPasoDiv.appendChild(newPasoInput);
+        pasosContainer.appendChild(newPasoDiv);
+    });
+
+    document.getElementById('add-ingrediente').addEventListener('click', function() {
+        const ingredientesContainer = document.getElementById('ingredientes-container');
+        const ingredienteCount = ingredientesContainer.children.length + 1;
+        const newIngredienteDiv = document.createElement('div');
+        newIngredienteDiv.classList.add('ingrediente');
+    
+        const newIngredienteInput = document.createElement('input');
+        newIngredienteInput.name = 'ingrediente[]';
+        newIngredienteInput.type = 'text';
+        newIngredienteInput.classList.add('feedback-input');
+        newIngredienteInput.placeholder = `Ingrediente ${ingredienteCount}`;
+        newIngredienteInput.required = true;
+    
+        newIngredienteDiv.appendChild(newIngredienteInput);
+        ingredientesContainer.appendChild(newIngredienteDiv);
+    });
+</script>
+<%- include ("partials/footer.ejs")%>
